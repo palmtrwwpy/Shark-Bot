@@ -21,8 +21,8 @@
 
 
 # Installing
-```git clone https://github.com/palmtrwwpy/Shark-Bot.git```
-```pip3 install -r requirements.txt```
+### ```git clone https://github.com/palmtrwwpy/Shark-Bot.git```
+### ```pip3 install -r requirements.txt```
 ### Fill out creds.json
-```python3 bot.py```
+### ```python3 bot.py```
 
