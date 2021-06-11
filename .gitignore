@@ -77,6 +77,11 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# Shark Bot
+creds.json
+.gitignore
+
+
 # IPython
 profile_default/
 ipython_config.py
@@ -127,3 +132,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+creds.json

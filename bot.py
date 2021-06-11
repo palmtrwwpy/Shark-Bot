@@ -17,9 +17,9 @@ def load_config():
 
 creds = load_config()
 
-class Bot(commands.Bot):
+class SharkBot(commands.Bot):
     def __init__(self):
-        super().__init__(command_prefix=['.', '!', '?', '<', '>'])
+        super().__init__(command_prefix=['.', '!', '?', '<', '>'], intents=discord.Intents.all(), case_sensitive=True)
         self.cxn = sqlite3.connect("sharkbot.db")
         self.c = self.cxn.cursor()
         self.token = creds['TOKEN']
@@ -37,3 +37,14 @@ class Bot(commands.Bot):
 
         for cog in COGS:
             self.load_extension(f"cogs.{cog}")
+
+    async def close(self):
+        await super().close()
+        await self.session.close()
+
+    def run(self):
+        super().run(self.token, reconnect=True)
+
+if __name__ == "__main__":
+    sharkbot = SharkBot()
+    sharkbot.run()
